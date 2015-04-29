@@ -325,8 +325,8 @@ class ChallengeController extends Controller {
 
     public function compile($code, $input, $lang) {
 
-        $user = 'ossec01'; //--> API username
-        $pass = 'ossec2014'; //--> API password
+        $user = ' '; //--> API username
+        $pass = ' '; //--> API password
         //language
         if ($lang == 'cpp')
             $lang = 1;
