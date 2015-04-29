@@ -1,0 +1,66 @@
+{% extends 'CodeChallengeBundle::Default/challenge.html.twig' %}
+{% block code %}
+
+    <div class="col-lg-8 col-md-6">
+        <div class="panel panel-default" >
+            <div class="panel-heading">
+                Code
+            </div>
+            <div class="panel-body" style="height:350px">
+                <p style="margin:0px">  <textarea  name="code", id="cpp-code"  >
+                        {% if code.content is defined  %}
+                            {{ code.content }}
+                        {% else %}
+#include <iostream>
+#include "mystuff/util.h"
+
+namespace {
+enum Enum {
+  VAL1, VAL2, VAL3
+};
+
+char32_t unicode_string = U"\U0010FFFF";
+string raw_string = R"delim(anything
+you
+want)delim";
+
+int Helper(const MyType& param) {
+  return 0;
+}
+} // namespace
+
+class ForwardDec;
+
+template <class T, class V>
+class Class : public BaseClass {
+  const MyType<T, V> member_;
+
+ public:
+  const MyType<T, V>& Method() const {
+    return member_;
+  }
+
+  void Method2(MyType<T, V>* value);
+}
+
+template <class T, class V>
+void Class::Method2(MyType<T, V>* value) {
+  std::out << 1 >> method();
+  value->Method3(member_);
+  member_ = value;
+}
+                                                    {% endif %}
+                                                    </textarea></p>
+                                                    </div>
+
+                                                    </div>
+                                                    </div>
+                                                    <script>
+                                                        var cppEditor = CodeMirror.fromTextArea(document.getElementById("cpp-code"), {
+                                                            lineNumbers: true,
+                                                            matchBrackets: true,
+                                                            mode: "text/x-c++src"
+                                                        });
+                                                    </script>
+
+                                                {% endblock %}

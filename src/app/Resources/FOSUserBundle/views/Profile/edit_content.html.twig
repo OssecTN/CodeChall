@@ -1,0 +1,22 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% block title %}
+    <h1 class="text-center">Edit Your Information</h1></br> {% endblock %}
+<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+    <label for="email">{{ 'email'|trans }}</label>
+    {{ form_errors(form.email) }}
+    {{ form_widget(form.email, { 'attr': {'class': 'form-control'} }) }}
+    </br>
+    <label for="username">{{ 'username'|trans }}</label>
+    {{ form_errors(form.username) }}
+    {{ form_widget(form.username, { 'attr': {'class': 'form-control'} }) }}
+    </br>
+    <label for="password">{{ 'current_password'|trans }}</label>
+    {{ form_errors(form.current_password) }}
+    {{ form_widget(form.current_password, { 'attr': {'class': 'form-control'} }) }}
+     </br>
+    
+    {{ form_rest(form) }}
+    <div>
+        <input type="submit" class="btn btn-info center-block" value="{{ 'edit.submit'|trans }}" />
+    </div>
+</form>

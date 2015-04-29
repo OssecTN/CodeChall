@@ -1,0 +1,56 @@
+{% extends 'CodeChallengeBundle::Default/challenge.html.twig' %}
+{% block code %}
+
+    <div class="col-lg-8 col-md-6">
+        <div class="panel panel-default" >
+            <div class="panel-heading">
+                Code
+            </div>
+            <div class="panel-body" style="height:350px">
+                <p style="margin:0px"> <textarea  name="code", id="java-code"  >
+                        {% if code.content is defined  %}
+                            {{ code.content }}
+                        {% else %}
+import com.demo.util.MyType;
+import com.demo.util.MyInterface;
+
+public enum Enum {
+  VAL1, VAL2, VAL3
+}
+
+public class Class<T, V> implements MyInterface {
+  public static final MyType<T, V> member;
+  
+  private class InnerClass {
+    public int zero() {
+      return 0;
+    }
+  }
+
+  @Override
+  public MyType method() {
+    return member;
+  }
+
+  public void method2(MyType<T, V> value) {
+    method();
+    value.method3();
+    member = value;
+  }
+}
+                                    {% endif %}
+                                    </textarea></p>
+                                    </div>
+
+                                    </div>
+                                    </div>
+                                    <script>
+                                        var javaEditor = CodeMirror.fromTextArea(document.getElementById("java-code"), {
+                                            lineNumbers: true,
+                                            matchBrackets: true,
+                                            mode: "text/x-java"
+                                        });
+                                    </script>
+
+
+                                {% endblock %}

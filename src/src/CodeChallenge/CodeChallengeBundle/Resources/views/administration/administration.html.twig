@@ -1,0 +1,19 @@
+{% extends 'CodeChallengeBundle::administration/base_admin.html.twig' %}
+
+
+{% block admin %}
+     
+    <div class="center-block" style="width:800px">
+        <h1 class="text-center" >Welcome in the administration</h1> 
+        </br></br></br></br>
+           
+        <div class="center-block" style="width:400px">
+        <a href="{{ path ('admin_challenge') }}" type="button" class="center-block btn btn-success"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Add Challenge </a>
+        </br>
+        <a href="{{ path ('admin_user') }}"type="button" class="center-block btn btn-success"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> View user challenge</a>
+       
+    </div>
+        </br></br></br>
+
+
+{% endblock %}

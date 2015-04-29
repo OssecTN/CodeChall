@@ -1,0 +1,82 @@
+
+
+/* ---- Counter ---- */
+
+#counter {
+	width: 700px;
+	height: 145px;
+	margin: 55px auto 0 auto;
+	font-family: 'LeagueGothicRegular', Arial, Helvetica, sans-serif;
+	font-size: 92px;
+	color: #272727;
+	text-shadow: 0 1px 0 #fff;
+	overflow: hidden;
+}
+
+.countDays, .countHours, .countMinutes, .countSeconds {
+	float: left;
+	width: 102px;
+	height: 138px;
+	padding-left: 36px;
+	background: #e7e7e7;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.1)), to(rgba(0,0,0,.07)));
+	background-image: -webkit-linear-gradient(top, rgba(255,255,255,.1), rgba(0,0,0,.07));
+	background-image: -moz-linear-gradient(top, rgba(255,255,255,.1), rgba(0,0,0,.07)); 
+	background-image: -ms-linear-gradient(top, rgba(255,255,255,.1), rgba(0,0,0,.07)); 
+	background-image: -o-linear-gradient(top, rgba(255,255,255,.1), rgba(0,0,0,.07));
+	background-image: linear-gradient(top, rgba(255,255,255,.1), rgba(0,0,0,.07));
+	border: 1px solid #ccc;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow:
+		0 2px 3px 0 rgba(255,255,255,.2) inset,
+		0 2px 2px 0 rgba(0,0,0,.1);
+	-webkit-box-shadow:
+		0 2px 3px 0 rgba(255,255,255,.2) inset,
+		0 2px 2px 0 rgba(0,0,0,.1);
+	box-shadow:
+		0 2px 3px 0 rgba(255,255,255,.2) inset,
+		0 2px 2px 0 rgba(0,0,0,.1);
+}
+
+.points {
+	float: left;
+	width: 40px;
+	margin: 0;
+	font-family: Georgia, serif;
+	font-size: 44px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 138px;
+	text-shadow: none;
+}
+
+.position {
+	position: relative;
+	float: left;
+	width: 35px;
+	height: 92px;
+	margin: 8px 0 0 0;
+}
+
+.digit {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.boxName {
+	float: left;
+	width: 80px;
+	margin: -5px 0 0 7px;
+	font-size: 36px;
+	color: #a6a6a6;
+	text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+.Hours { margin-left: 5px; }
+.Seconds { margin-left: 2px; }
+
+
+

@@ -1,0 +1,43 @@
+{% extends 'CodeChallengeBundle::administration/base_admin.html.twig' %}
+
+
+{% block admin %}
+    <div class="center-block" style="width:400px">
+        <h1 class="text-center">Add Challenge</h1> 
+
+       
+            <form action="{{path ('admin_challenge')}}" method="post">
+                <label for="nom">{{ 'Challenge name'|trans }}</label>
+                {{ form_errors(form.nom) }}
+                {{ form_widget(form.nom, { 'attr': {'class': 'form-control'} }) }}
+                </br>
+                <label for="duree">{{ 'Duration'|trans }}</label>
+                {{ form_errors(form.duree) }}
+                {{ form_widget(form.duree, { 'attr': {'class': 'form-control'} }) }}
+                </br>
+                <label for="nombreProblemes">{{ 'Problem\'s number'|trans }}</label>
+                {{ form_errors(form.nombreProblemes) }}
+                {{ form_widget(form.nombreProblemes, { 'attr': {'class': 'form-control'} }) }}
+                </br>
+                 <label for="dateDebut">{{ 'Date/Time'|trans }}</label>
+                {{ form_errors(form.dateDebut) }}
+                {{ form_widget(form.dateDebut) }}
+                </br>
+                 <label for="languages">{{ 'Languages'|trans }}</label>
+                {{ form_errors(form.languages) }}
+                {{ form_widget(form.languages, { 'attr': {'class': 'form-control'} }) }}
+                </br>
+                <label for="info">{{ 'Info'|trans }}</label>
+                {{ form_errors(form.info) }}
+                {{ form_widget(form.info, { 'attr': {'class': 'form-control'} }) }}
+                </br>
+                {{ form_widget(form.Send, { 'attr': {'class': 'btn btn-info center-block'} }) }}
+                </br>
+                {{ form_rest(form)  }}
+                
+            </form>
+       
+    </div>
+
+
+{% endblock %}

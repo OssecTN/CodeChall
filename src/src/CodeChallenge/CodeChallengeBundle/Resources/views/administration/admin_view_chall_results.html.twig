@@ -1,0 +1,48 @@
+{% extends 'CodeChallengeBundle::administration/base_admin.html.twig' %}
+
+
+{% block admin %}
+
+
+    </br></br>
+
+    <div class=" col-lg-4 user-panel">
+        <div class="panel panel-info panel-colorful">
+            <div class="panel-body text-center  user-panel"></br>
+                <p class="text-uppercase mar-btm text-sm">{{ useri.username }}</p></br>
+                <span class="glyphicon glyphicon-user glyphicon-big" aria-hidden="true"></span>
+                </br><hr>
+                <p class="h2 text-thin">{% if score is not null %}{{ score.score }}{% endif %}</p>
+                <large><span class="text-semibold"><a href="{{ path ("code_challenge_challenge", { 'chall': chall, 'prob': 'probleme1'}) }}">Keep Coding</a></large>
+            </div>
+        </div>
+    </div>
+
+
+    {% for code in list %} 
+        {% if code is not null %}
+            <div class="col-lg-4">
+                <div class="panel panel-default ">
+                    <div class="panel-heading">
+                        {{ code.prob }} | {{ code.langage }}
+                    </div>
+                    <div class="panel-body panel-results">
+                        <pre class="test " > {{ code.content }} </pre>
+                    </div>
+                    <div class="panel-footer">
+                       <span class="glyphicon glyphicon-signal" aria-hidden="true"></span> Score : {{ code.score }} | You have : {{ code.error }} submission errors
+                    </div>
+                </div>
+            </div>
+
+        {% endif %}
+    {% endfor %}
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'CodeChallengeBundle::administration/base_admin.html.twig' %}
+ 
+{% block admin %}
+    <div class="center-block" style="width:400px">
+        <h1 class="text-center">Add Challenge</h1> 
+        <form action="{{path ('test_ajout', {'prob': prob, 'test': test})}}" method="post">
+         <label for="nom">{{ 'Test name'|trans }}</label>
+                {{ form_errors(form.nom) }}
+                {{ form_widget(form.nom, { 'attr': {'class': 'form-control'} }) }}
+                </br>
+                <label for="output">{{ 'Output'|trans }}</label>
+                {{ form_errors(form.output) }}
+                {{ form_widget(form.output, { 'attr': {'class': 'form-control'} }) }}
+                </br>
+                <label for="input">{{ 'Input'|trans }}</label>
+                {{ form_errors(form.input) }}
+                {{ form_widget(form.input, { 'attr': {'class': 'form-control'} }) }}
+                </br>
+                 
+                {{ form_widget(form.Send, { 'attr': {'class': 'btn btn-info center-block'} }) }}
+                </br>
+            {{ form_rest(form) }}
+        </form>
+    </div>
+{% endblock %}
+

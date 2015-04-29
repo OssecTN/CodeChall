@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CodeChallenge</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href = "{{ asset('css/bootstrap.min.css') }}" rel = "stylesheet">
+        <link href = "{{ asset('css/style.css') }}" rel = "stylesheet">
+        {% block css %}   {% endblock %}
+        {% block javascript %}   {% endblock %}
+    </head>
+    <body>
+
+        <div class = "navbar navbar-default navbar-static-top">
+            <div class = "container-fluid">
+
+                <a href="" type="button" class = "navbar-brand" data-toggle="modal" data-target="#welcome"> Code Challenge</a>
+
+                <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+                    <span class = "icon-bar"></span>
+                    <span class = "icon-bar"></span>
+                    <span class = "icon-bar"></span>
+                </button>
+
+                <div class = "collapse navbar-collapse navHeaderCollapse">
+                    <p class="navbar-text navbar-left" style="margin-left:50px"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 
+                        {% block member %}
+                            {% if user.username is defined %}
+                                {% if user.username is not empty  %}
+                                    Welcome {{ user.username }} <a href="{{ path ("fos_user_profile_show") }}"> -Profile</a> 
+                                {% endif %}    
+                            {% else %}
+                                <a href="{{ path ("fos_user_security_login") }}">You are not connected </a>
+                            {% endif %}
+
+                        {% endblock %}</p>
+                     
+                        {% block problems %} {% endblock %}
+                           {% block timer %} {% endblock %}
+                      
+
+                    <ul class = "nav navbar-nav navbar-right">
+                        <li {% block active_home %}{% endblock %}><a href = "{{ path('code_challenge_homepage') }}">Home</a></li>
+                        <li {% block active_challenges %}{% endblock %}><a href = "{{ path('allchallenges') }}">Challenges</a></li>
+                        <li {% block active_about %}{% endblock %}><a href = "http://ossec.tn">About</a></li>
+                        <li {% block active_contact %}{% endblock %}><a href = "#">Contact</a></li>
+                        <li class = "dropdown">
+                            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown"><b class = "caret"></b></a>
+                            <ul class = "dropdown-menu">
+                                {% if user.username is defined %}
+                                    {% if user.username is not empty  %}
+                                        <li><a href="{{ path('fos_user_security_logout') }}">Log out</a></li>
+                                        {% endif %}    
+                                    {% else %}
+                                    <li><a href = "{{ path ("fos_user_security_login") }}">Log in</a></li>
+                                    <li><a href = "{{ path ("fos_user_registration_register") }}">Sign up</a></li>
+
+                                {% endif %}
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!--content-->
+
+        <div class="container-fluid" id="content">
+            <!--<div class="center-block" style="width:400px; margin-top:-30px">-->
+            {% block content %}  {% endblock %}
+            <!--</div>-->
+        </div>
+
+        <!--footer-->
+
+        <div class="footer">
+            <div class = "container" >
+                <p class = "text-center">OSSEC - <a href="www.ossec.tn">http://ossec.tn</a> - Developed By : Abdelli Haithem & Arfaoui Atef - Design By : Abdelli Haithem</p>
+            </div>
+
+            
+        <!-- popup welcome -->
+        <div class="modal fade" id="welcome" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content panel-transparent">
+      <div class="modal-header panel-t-h">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Welcome In CodeChallenge</h4>
+      </div>
+      <div class="modal-body  modal-size panel-t-b">
+       text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+        text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+         text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+          text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+           text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+            text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+      
+           
+      </div>
+      <div class="modal-footer panel-t-h">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+        <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src = "{{ asset('js/bootstrap.js') }}"></script>
+        {% block js %} 
+
+        {% endblock %}
+    </body>
+</html>

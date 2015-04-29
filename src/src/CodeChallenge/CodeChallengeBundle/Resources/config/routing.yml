@@ -1,0 +1,66 @@
+administration:
+    pattern: /admin
+    defaults: { _controller: CodeChallengeBundle:Admin:admin }
+
+admin_user:
+    pattern: /admin/view
+    defaults: { _controller: CodeChallengeBundle:Admin:admin_view }
+    
+admin_user_challenge:
+    pattern: /admin/view/{chall}
+    defaults: { _controller: CodeChallengeBundle:Admin:admin_view_chall }
+    
+admin_user_del:
+    pattern: /admin/view/{chall}/del{user}
+    defaults: { _controller: CodeChallengeBundle:Admin:admin_user_del }
+    
+admin_user_results:
+    pattern: /admin/view/{chall}/{user}
+    defaults: { _controller: CodeChallengeBundle:Admin:admin_view_results }
+    
+admin_challenge:
+    pattern: /admin_challenge
+    defaults: { _controller: CodeChallengeBundle:Admin:challenge }
+
+prob_ajout:
+    pattern: /admin_challenge/{prob}
+    defaults: { _controller: CodeChallengeBundle:Admin:prob }
+    
+    
+test_ajout:
+    pattern: /admin_challenge/{prob}/{test}
+    defaults: { _controller: CodeChallengeBundle:Admin:test }
+
+code_challenge_homepage:
+    pattern:  /
+    defaults: { _controller: CodeChallengeBundle:Default:index }
+
+results:
+    pattern: /{chall}/results
+    defaults: { _controller: CodeChallengeBundle:Results:result} 
+ 
+attente:
+    pattern:  /{chall}/time
+    defaults: { _controller: CodeChallengeBundle:Time:time}
+    
+classement:
+    pattern:  /{chall}/ScoreBoard
+    defaults: { _controller: CodeChallengeBundle:Classement:classement}
+    
+
+ 
+code_challenge_challenge:
+    pattern:  /{chall}/{prob}/{lang}
+    defaults: { _controller: CodeChallengeBundle:Challenge:challenge, lang: c }
+
+
+    
+code_challenge_lessons:
+    pattern:  /lessons
+    defaults: { _controller: CodeChallengeBundle:Default:lessons }
+
+    
+allchallenges:
+    pattern:  /challenges
+    defaults: { _controller: CodeChallengeBundle:Challenges:challenges }
+    

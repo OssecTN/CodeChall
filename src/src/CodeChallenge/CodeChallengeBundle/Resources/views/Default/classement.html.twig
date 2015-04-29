@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+
+
+
+{% block content %}
+
+    </br></br>
+    <div class="center-block" style="width:800px">
+				<div class="panel panel-inverse" data-sortable-id="table-basic-4">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Score Board</h4>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped">
+                                 <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Username</th>
+                                        <th>Score</th>
+                                        <th>Time</th>
+                                        <th>Errors</th>
+                                        <th>Time_final</th>
+					<th>Rank</th>
+                                    </tr>
+                                </thead>
+                    {% set i = '0' %} 
+                    <tbody>
+                    {% for user in list %}
+                              {% set i = i + 1 %}       
+                                    <tr>
+                                        <th>#</th>
+                                        <th>{{ user.user }}</th>
+                                        <th>{{ user.score }}</th>
+					<th>{{ user.time|date('Y-m-d H:i:s') }}</th>
+                                        <th>{{ user.error }}</th>
+                                        <th>{{ user.time_final|date('Y-m-d H:i:s') }}</th>
+                                        <th>{{ i }}</th>
+                                    </tr>
+                              {% endfor %}
+                                             </tbody>
+                            </table>
+                        </div>
+                    </div>
+			</div>
+			</div>
+                        
+
+
+                        </body>
+                    </html>
+                </div>
+                {% endblock %}

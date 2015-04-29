@@ -1,0 +1,42 @@
+{% extends 'CodeChallengeBundle::administration/base_admin.html.twig' %}
+
+
+{% block admin %}
+<div class="center-block" style="width:800px">
+     </br></br>
+    <div class="panel panel-info panel-inverse" data-sortable-id="table-basic-4">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Users</h4>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped">
+                                 <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Username</th>
+					<th>Action</th>
+                                    </tr>
+                                </thead>
+                                 <tbody>
+    {% for list in listuser %}
+<tr>
+                                        <th>#</th>
+                                        <th> {{ list.user }}</th>
+                                        {% if time == '1' %}
+					<th><a  href="{{path ('admin_user_results', { 'chall': chall, 'user': list.user})}}"><button type="button" class="btn btn-success">View results</button></a></th>
+                                        {% else %}
+                                        <th><a  href="{{path ('admin_user_del', { 'chall': chall, 'user': list.user})}}"><butadmin_user_resultston type="button" class="btn btn-danger">Delete User</button></a></th>
+                                        {% endif %}
+                                    </tr>
+                                     {% endfor %}  
+    </tbody>
+          </table>
+                        </div>
+                    </div>
+			</div>
+         
+
+       
+
+</div>
+{% endblock %}

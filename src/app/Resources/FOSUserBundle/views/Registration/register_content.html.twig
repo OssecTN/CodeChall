@@ -1,0 +1,25 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% block title %}
+    <h1 class="text-center">Signin</h1> {% endblock %}
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+    <label for="email">{{ 'email'|trans }}</label>
+    {{ form_errors(form.email) }}
+    {{ form_widget(form.email, { 'attr': {'class': 'form-control'} }) }}
+    </br>
+    <label for="username">{{ 'username'|trans }}</label>
+    {{ form_errors(form.username) }}
+    {{ form_widget(form.username, { 'attr': {'class': 'form-control'} }) }}
+    </br>
+    <label for="password">{{ 'password'|trans }}</label>
+    {{ form_errors(form.plainPassword.first) }}
+    {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control'} }) }}
+     </br>
+     <label for="password">{{ 'confirm_password'|trans }}</label>
+    {{ form_errors(form.plainPassword.second) }}
+    {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control'} }) }}
+    </br>
+    {{ form_rest(form) }}
+    <div>
+        <input type="submit" class="btn btn-info center-block" value="{{ 'submit'|trans }}" />
+    </div>
+</form>

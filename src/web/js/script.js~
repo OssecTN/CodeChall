@@ -1,0 +1,17 @@
+
+$(document).ready(function(){
+
+
+	/* ---- Countdown timer ---- */
+
+	$('#counter').countdown({
+
+		timestamp : (new Date()).getTime() + 60*1000
+	});
+
+
+	
+
+
+});
+

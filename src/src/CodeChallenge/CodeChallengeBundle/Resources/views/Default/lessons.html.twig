@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+{% block member %}
+    <div id="member"> --- Welcome Haithem Abdelli : <a href="#">Profile</a> --- </div>
+{% endblock %}
+
+{% block timer %}
+    <div id="timer"> You are reading : xx Lesson ---------
+        <a href="#">TP</a> |
+        <a href="#">Exercices</a> 
+    </div>
+{% endblock %}
+{% block menu %}
+    <div id="menu">
+        <ul>                
+            <li><a id="nav_Lessons" href="{{ path ("code_challenge_homepage") }}#Lessons">Lessons<span class="m_w">Lessons</span><span class="m_r">Lessons</span></a></li>
+            <li><a id="nav_Challenges" href="{{ path ("code_challenge_homepage") }}">Home<span class="m_w">Home</span><span class="m_r">Home</span></a></li>
+            <li><a id="nav_Home" href="{{ path ("code_challenge_homepage") }}#Challenges">Challenges<span class="m_w">Challenges</span><span class="m_r">Challenges</span></a></li>
+            <li><a id="nav_contact" href="{{ path ("code_challenge_homepage") }}#contact">Contact<span class="m_w">Contact</span><span class="m_r">Contact</span></a></li>
+        </ul>
+    </div>
+</div>
+</div><!-- end div #navbarHolder -->
+{% endblock %}
+
+
+
+{% block body %}
+
+    <style>
+        body{
+            background-color:#fff;
+        }
+    </style>
+
+    <!------------------------- CONTENT -->
+
+    <div id="container">
+        
+
+        <!------------------------- Home -->
+
+        <div id="Home">
+            <div>
+            <embed src="{{ asset("lessons/Rapport_Final_Projet.pdf") }}" width="1000px" height="600px" text-align="center">
+            <div>
+        </div><!-- end div #Home -->
+
+    </div><!-- end div #contact -->
+</div><!-- end div #container -->
+</div><!-- end div #wrapper -->
+
+{% endblock %}

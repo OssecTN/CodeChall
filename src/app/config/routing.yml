@@ -1,0 +1,8 @@
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+code_challenge:
+    resource: "@CodeChallengeBundle/Resources/config/routing.yml"
+    prefix:   /
+

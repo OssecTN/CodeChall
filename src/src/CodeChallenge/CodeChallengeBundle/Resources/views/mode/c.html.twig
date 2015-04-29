@@ -1,0 +1,33 @@
+{% extends 'CodeChallengeBundle::Default/challenge.html.twig' %}
+
+{% block code %}
+
+     <div class="col-lg-8 col-md-6">
+					<div class="panel panel-default" >
+                        <div class="panel-heading">
+                            Code
+                        </div>
+                        <div class="panel-body" style="height:350px">
+                            <p style="margin:0px"> <textarea name="code", id="c-code" >
+         {% if code.content is defined  %}
+            {{ code.content }}
+          {% else %}
+printf("Welcome To OSSEC Code Challenge Site");
+{% endif %}
+
+                                        </textarea></p>
+                        </div>
+                      
+                    </div>
+					</div>
+
+                                        <script>
+                                            var cEditor = CodeMirror.fromTextArea(document.getElementById("c-code"), {
+                                                lineNumbers: true,
+                                                matchBrackets: true,
+                                                mode: "text/x-csrc"
+                                            });
+                                        </script>
+
+
+                                    {% endblock %}

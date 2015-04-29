@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block css %}
+    <style>
+        body{
+            background-color:#fff;
+        }
+    </style>
+{% endblock %}  
+{% block content %}
+     {% if is_granted('ROLE_ADMIN') %}
+         {% block admin %} {% endblock %}
+        {% else %}
+            </br></br>
+           <div class="center-block" style="width:800px">
+               
+               <h1 class="text-center"> Not Found </h1>
+               
+           </div>
+     
+            
+            
+            
+        {% endif %}
+    
+
+
+{% endblock %}

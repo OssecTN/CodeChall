@@ -1,0 +1,24 @@
+{% extends 'CodeChallengeBundle::administration/base_admin.html.twig' %}
+
+
+{% block admin %}
+
+    {% for list in listchallenges %}
+
+        <div class="col-md-6 col-lg-4">
+            <div class="panel panel-info panel-colorful">
+                <div class="panel-body text-center user-panel"></br>
+                    <p class="text-uppercase mar-btm text-sm">{{ list.nom }}</p></br>
+                    <span class="glyphicon glyphicon-tasks glyphicon-big" aria-hidden="true"></span>
+                    </br><hr></br>
+
+                    <a  href="{{path ('admin_user_challenge', { 'chall': list.nom})}}"><button type="button" class="btn btn-success">View Users</button></a>
+
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}      
+
+
+{% endblock %}

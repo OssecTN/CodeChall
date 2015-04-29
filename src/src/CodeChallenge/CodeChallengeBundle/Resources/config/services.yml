@@ -1,0 +1,7 @@
+parameters:
+#    code_challenge.example.class: CodeChallenge\CodeChallengeBundle\Example
+
+services:
+#    code_challenge.example:
+#        class: %code_challenge.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

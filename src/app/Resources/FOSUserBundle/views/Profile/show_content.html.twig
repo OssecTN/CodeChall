@@ -1,0 +1,21 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="fos_user_user_show">
+
+    <h3 class="header smaller lighter red">Your Profile :</h3>
+
+    <div class="well">
+        <h4 class="green smaller lighter">{{ 'Username'|trans }}:</h4>
+       {{ user.username }}
+    </div>
+
+    <div class="well well-lg">
+        <h4 class="blue">{{ 'profile.show.email'|trans }}:</h4>
+        {{ user.email }}
+    </div>
+    <div class="well well-sm"> <a href="{{ path ("fos_user_profile_edit") }}">Edit your Profile</a> | <a href="{{ path ("fos_user_change_password") }}">change password</a> | {% if is_granted('ROLE_ADMIN') %}
+    <a href="{{ path ('administration') }}"> Administration </a>
+{% endif %}
+ </div>
+</div>
+

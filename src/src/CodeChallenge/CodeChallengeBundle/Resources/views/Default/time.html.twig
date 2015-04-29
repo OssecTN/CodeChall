@@ -1,0 +1,41 @@
+{% extends '::base.html.twig' %}
+
+
+{% block css %}
+	<link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+	<link rel="stylesheet" href="{{ asset('fonts/stylesheet.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/counter.css') }}">
+{% endblock %}
+
+{% block content %}
+			<div class="container" id="content">
+		<div class="center-block" style="width:800px">
+			</br></br></br></br>
+			<h2> Start In : </h2>
+			<div id="counter"></div>
+		
+			</div>
+			</div>
+
+  
+{% endblock %}
+
+
+{% block js %}
+   <script src="{{ asset('js/jquery.countdown.js') }}"></script>
+		    <script>
+                        var cible = new Date('{{date|date("m")}} {{date|date("d")}}, {{date|date("Y")}} {{date|date("H")}}:{{date|date("i")}}:{{date|date("s")}}');
+			var time = parseInt(cible.getTime() / 1000, 10);
+                        $(document).ready(function(){
+                                var aujourdhui = new Date();
+                                time_tmp = parseInt(aujourdhui.getTime() / 1000, 10);
+                                restant = time - time_tmp;
+				/* ---- Countdown timer ---- */
+				$('#counter').countdown({	
+				timestamp : (new Date()).getTime() + restant*1000
+				});
+			});
+		    </script> 
+{% endblock %}
+
+

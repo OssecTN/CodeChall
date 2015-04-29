@@ -1,0 +1,62 @@
+{% extends '::base.html.twig' %}
+
+
+
+
+
+{% block content %}
+            {% for list in listchallenges %}
+                <div class="col-md-6 col-lg-4">
+        <div class="panel panel-info panel-colorful">
+            <div class="panel-body text-center user-panel"></br>
+                <p class="text-uppercase mar-btm text-sm">
+                   <a href="" type="button"  data-toggle="modal" data-target="#info{{list.nom}}"> 
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span> 
+                    {{ list.nom }}
+                   </a>
+                </p></br>
+                <span class="glyphicon glyphicon-tasks glyphicon-big" aria-hidden="true"></span>
+                </br><hr></br>
+                    {% set test = 'faux' %}
+                    {%for j in join %}
+                        {% if j.challenge == list %}
+                            {% set test = 'vrai' %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if test == 'faux' %}    
+                        {% if list.time == '0' %}<a  href="{{path ('attente', { 'chall': list.nom})}}"><button type="button" class="btn btn-danger">Join</button></a>{% endif %}
+                        {% if list.time =='2' %} <a href="{{path ('classement', { 'chall': list.nom})}}"><button  type="button" class="btn btn-success">Results</button></a>{% endif %}
+                    {% else %}{% if list.time =='2' %} <a href="{{path ('classement', { 'chall': list.nom})}}"><button  type="button" class="btn btn-success">Results</button></a>
+                              {% else %}<a href="{{path ('code_challenge_challenge', { 'chall': list.nom, 'prob': 'probleme1'})}}"><button  type="button" class="btn btn-success">Play</button></a>{% endif %}
+                    {% endif %}
+            </div>
+        </div>
+    </div>
+                    
+                    
+      
+                            <!-- popup welcome -->
+        <div class="modal fade" id="info{{list.nom}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content panel-transparent">
+      <div class="modal-header panel-t-h">
+        <button type="button"nsparent class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Welcome In {{ list.nom }}</h4>
+      </div>
+      <div class="modal-body  modal-size panel-t-b">
+            {{list.info}}
+           
+      </div>
+      <div class="modal-footer panel-t-h">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>   
+        </div>                   
+                    
+                
+          {% endfor %}      
+              
+              
+
+        {% endblock %}
